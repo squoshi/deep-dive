@@ -19,6 +19,7 @@ jei/world/local/
 debug/
 bk/
 impossible_data/
+kubejs/probe/
 
 # Compiled class file
 *.class
