@@ -18,6 +18,7 @@ modernfix/
 jei/world/local/
 debug/
 bk/
+impossible_data/
 
 # Compiled class file
 *.class
