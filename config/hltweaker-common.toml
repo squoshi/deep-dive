@@ -1,0 +1,7 @@
+#Define new harvest levels here, "<id>,<level>" (level start from 5, 0-4 are vanilla levels), example: "cobalt,5
+harvest_levels = []
+#Override item harvest level and tool type here, "<item id>,<mineable tag>+<another mineable tag>,<level id>", example: "minecraft:wooden_pickaxe,minecraft:mineable/pickaxe+minecraft:mineable/axe+minecraft:mineable/shovel,minecraft:netherite"
+item_harvest_level_overrides = []
+#Enable custom name support for vanilla levels
+enable_custom_vanilla_names = false
+

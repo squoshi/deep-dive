@@ -1,0 +1,9 @@
+
+[general]
+	#Whether the hit marker is enabled
+	hitMarkerEnabled = true
+	#How many ticks the marker lasts
+	hitMarkerDuration = 30
+	#How loud the volume of the hit is, set to 0 to turn off
+	hitSoundVolume = 0.5
+

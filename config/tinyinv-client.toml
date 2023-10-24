@@ -1,0 +1,13 @@
+
+[general]
+	#Should draw overlay over the fake slots
+	fake_slot_overlay = true
+	#Color of the fake slot overlay
+	#Range: > 0
+	fake_slot_overlay_color = 13027014
+	#Should hide the offhand slot? Ignored if disableOffhand in the common config is true
+	hide_offhand = false
+	#The maximal number of slots in a hotbar slot (0 = as many as fit the screen)
+	#Range: > 0
+	max_slots_in_hotbar_row = 0
+

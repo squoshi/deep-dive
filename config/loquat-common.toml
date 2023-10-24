@@ -1,0 +1,7 @@
+[debug]
+enable = false
+[general]
+selectionItem = "minecraft:spectral_arrow"
+nearbyRange = 100
+[restrict]
+positionCheckInterval = 20

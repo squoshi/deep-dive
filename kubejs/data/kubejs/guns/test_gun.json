@@ -1,0 +1,58 @@
+{
+    "display": {
+        "flash": {
+            "yOffset": 3.3,
+            "zOffset": 2.64
+        }
+    },
+    "general": {
+        "auto": true,
+        "alwaysSpread": true,
+        "gripType": "cgm:two_handed",
+        "maxAmmo": 16,
+        "rate": 3,
+        "recoilAdsReduction": 0.5,
+        "recoilAngle": 3,
+        "reloadAmount": 1,
+        "spread": 8,
+        "projectileAmount": 5
+    },
+    "modules": {
+        "attachments": {
+            "barrel": {
+                "scale": 0.5,
+                "yOffset": 3.3,
+                "zOffset": 2.65
+            },
+            "scope": {
+                "scale": 0.75,
+                "yOffset": 3.7,
+                "zOffset": 6.0
+            },
+            "stock": {
+                "yOffset": 3.3,
+                "zOffset": 7.95
+            }
+        },
+        "zoom": {
+            "fovModifier": 0.7,
+            "yOffset": 4.5,
+            "zOffset": -1.0
+        }
+    },
+    "projectile": {
+        "damage": 9.0,
+        "gravity": true,
+        "item": "minecraft:slime_ball",
+        "life": 25,
+        "size": 1,
+        "speed": 1.2
+    },
+    "sounds": {
+        "cock": "minecraft:entity.slime.attack",
+        "enchantedFire": "minecraft:block.slime_block.place",
+        "fire": "minecraft:block.slime_block.place",
+        "reload": "minecraft:entity.slime.squish",
+        "silencedFire": "minecraft:block.slime_block.place"
+    }
+}

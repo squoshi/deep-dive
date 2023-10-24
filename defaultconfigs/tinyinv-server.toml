@@ -1,0 +1,18 @@
+
+[general]
+	#Number of slots
+	#Range: 1 ~ 36
+	inventory_slots = 18
+	#Number of hotbar slots
+	#Range: 1 ~ 36
+	hotbar_slots = 6
+	#ID of the first armor (non-container) inventory slot)
+	#Range: > 1
+	armor_start_id = 18
+	#Should disable the left hand?
+	disable_offhand = true
+	#Counts slots by their numerical ID - hotbar has IDs 0-8, the top inventory row 9-17,....
+	count_slots_from_start = true
+	#Should exclude the players who are in creative mode?
+	exclude_creative_mode_players = false
+

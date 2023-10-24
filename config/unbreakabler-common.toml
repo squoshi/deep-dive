@@ -1,0 +1,10 @@
+
+[Unbreakabler]
+	"enable mod" = true
+	#Use 'B' for Blacklist mode, use any other word(s) (e.g.  I love you) for whitelist mode
+	Mode = "B"
+	#Unbreakable tag blacklist/whitelist items
+	Items = []
+	#If this is defined, only the mod that has this modID will be unbreakable.
+	ValidMods = []
+

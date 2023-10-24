@@ -1,0 +1,19 @@
+{
+    "attributes": {
+        "attack_range": 0.1,
+        "pose": "bettercombat:pistol_hold",
+        "category": "sword",
+        "attacks": [
+            {
+                "hitbox": "HORIZONTAL_PLANE",
+                "damage_multiplier": 1,
+                "angle": 1,
+                "upswing": 0,
+                "animation": "bettercombat:pistol_pew_pew",
+                "swing_sound": {
+                    "id": "scorchedguns:item.heavy.fire"
+                }
+            }
+        ]
+    }
+}

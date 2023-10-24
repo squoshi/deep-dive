@@ -1,0 +1,238 @@
+/*
+This file uses the ".json5" file extension which allows for comments like this in a json file!
+Your text editor may show this file with invalid/no syntax, if so, we recommend you download:
+
+VSCode: https://code.visualstudio.com/
+JSON5 plugin(for VSCode): https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5
+
+to make editing this file much easier.
+*/
+{
+	// Generates all block states for all blocks in the registry.
+	"generate_all_known_states": true,
+	// Whether blocks are replaced in existing chunks.
+	"retro_gen": false,
+	/* A map of states that specifies what the "old" block state is and what its "new" block state is.
+	   See "known_states" folder("generate_all_known_states" must be set to true in this config) to see all known block states available for all blocks available in the registry.
+	   Example:
+	    "state_swapper": [
+	    	{
+	    		"new": {
+	    			"Name": "minecraft:birch_log",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"axis": "x"
+	    			}
+	    		},
+	    		"old": {
+	    			"Name": "minecraft:oak_log",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"axis": "z"
+	    			}
+	    		}
+	    	},
+	    	{
+	    		"new": {
+	    			"Name": "minecraft:birch_leaves",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"distance": "7",
+	    				"persistent": "true"
+	    			}
+	    		},
+	    		"old": {
+	    			"Name": "minecraft:acacia_log",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"axis": "z"
+	    			}
+	    		}
+	    	},
+	    	{
+	    		"new": {
+	    			"Name": "minecraft:jungle_log",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"axis": "x"
+	    			}
+	    		},
+	    		"old": {
+	    			"Name": "minecraft:birch_log",
+	    			// Properties define the state of this block/fluid.
+	    			"Properties": {
+	    				"axis": "z"
+	    			}
+	    		}
+	    	},
+	    	{
+	    		"new": {
+	    			"Name": "minecraft:jungle_planks",
+	    		},
+	    		"old": {
+	    			"Name": "minecraft:acacia_planks",
+	    			}
+	    		}
+	    	}
+	    ]
+	*/
+	"state_swapper": [
+	],
+	/* A map of blocks that specifies what the "old" block is and what its "new" block is.
+	   Example:
+	   	"swapper": {
+	   		"minecraft:coarse_dirt": "minecraft:dirt",
+	   		"minecraft:diamond_block": "minecraft:emerald_block"
+	   	}
+	*/
+	"swapper": {
+		// shrubbery
+		"minecraft:oak_log": "minecraft:air",
+		"minecraft:oak_leaves": "minecraft:air",
+		"minecraft:birch_log": "minecraft:air",
+		"minecraft:birch_leaves": "minecraft:air",
+		"minecraft:acacia_log": "minecraft:air",
+		"minecraft:acacia_leaves": "minecraft:air",
+		"minecraft:jungle_log": "minecraft:air",
+		"minecraft:jungle_leaves": "minecraft:air",
+		"minecraft:spruce_log": "minecraft:air",
+		"minecraft:spruce_leaves": "minecraft:air",
+		"minecraft:dark_oak_log": "minecraft:air",
+		"minecraft:dark_oak_leaves": "minecraft:air",
+		"minecraft:mangrove_log": "minecraft:air",
+		"minecraft:mangrove_leaves": "minecraft:air",
+		"minecraft:mangrove_roots": "minecraft:air",
+		"minecraft:muddy_mangrove_roots": "minecraft:air",
+		"minecraft:mangrove_propagule": "minecraft:air",
+		"minecraft:vine": "minecraft:air",
+		"minecraft:bee_nest": "minecraft:air",
+		"minecraft:grass": "minecraft:air",
+		"minecraft:fern": "minecraft:air",
+		"minecraft:large_fern": "minecraft:air",
+		"minecraft:tall_grass": "minecraft:air",
+		"minecraft:dandelion": "minecraft:air",
+		"minecraft:poppy": "minecraft:air",
+		"minecraft:blue_orchid": "minecraft:air",
+		"minecraft:allium": "minecraft:air",
+		"minecraft:azure_bluet": "minecraft:air",
+		"minecraft:red_tulip": "minecraft:air",
+		"minecraft:orange_tulip": "minecraft:air",
+		"minecraft:white_tulip": "minecraft:air",
+		"minecraft:pink_tulip": "minecraft:air",
+		"minecraft:oxeye_daisy": "minecraft:air",
+		"minecraft:cornflower": "minecraft:air",
+		"minecraft:lily_of_the_valley": "minecraft:air",
+		"minecraft:wither_rose": "minecraft:air",
+		"minecraft:brown_mushroom": "minecraft:air",
+		"minecraft:red_mushroom": "minecraft:air",
+		"minecraft:dead_bush": "minecraft:air",
+		"minecraft:water": "minecraft:air",
+		"minecraft:lava": "minecraft:air",
+		"minecraft:grass_block": "minecraft:stone",
+		"minecraft:dirt": "minecraft:stone",
+		"minecraft:oak_planks": "minecraft:stone",
+		"minecraft:spruce_planks": "minecraft:stone",
+		"minecraft:birch_planks": "minecraft:stone",
+		"minecraft:jungle_planks": "minecraft:stone",
+		"minecraft:acacia_planks": "minecraft:stone",
+		"minecraft:dark_oak_planks": "minecraft:stone",
+		"minecraft:crimson_planks": "minecraft:stone",
+		"minecraft:warped_planks": "minecraft:stone",
+		"minecraft:mangrove_planks": "minecraft:stone",
+		//all village shtuff
+		"minecraft:cobblestone": "minecraft:air",
+		"minecraft:glass": "minecraft:air",
+		"minecraft:glass_pane": "minecraft:air",
+		"minecraft:smooth_stone": "minecraft:air",
+		"minecraft:smooth_stone_slab": "minecraft:air",
+		"minecraft:stone_slab": "minecraft:air",
+		"minecraft:oak_slab": "minecraft:air",
+		"minecraft:spruce_slab": "minecraft:air",
+		"minecraft:birch_slab": "minecraft:air",
+		"minecraft:jungle_slab": "minecraft:air",
+		"minecraft:acacia_slab": "minecraft:air",
+		"minecraft:dark_oak_slab": "minecraft:air",
+		"minecraft:crimson_slab": "minecraft:air",
+		"minecraft:warped_slab": "minecraft:air",
+		"minecraft:mangrove_slab": "minecraft:air",
+		"minecraft:barrel": "minecraft:air",
+		"minecraft:bell": "minecraft:air",
+		"minecraft:blast_furnace": "minecraft:air",
+		"minecraft:brewing_stand": "minecraft:air",
+		"minecraft:cartography_table": "minecraft:air",
+		"minecraft:composter": "minecraft:air",
+		"minecraft:fletching_table": "minecraft:air",
+		"minecraft:grindstone": "minecraft:air",
+		"minecraft:lectern": "minecraft:air",
+		"minecraft:loom": "minecraft:air",
+		"minecraft:smithing_table": "minecraft:air",
+		"minecraft:smoker": "minecraft:air",
+		"minecraft:stonecutter": "minecraft:air",
+		"minecraft:campfire": "minecraft:air",
+		"minecraft:hay_block": "minecraft:air",
+		"minecraft:chest": "minecraft:air",
+		"minecraft:trapped_chest": "minecraft:air",
+		"minecraft:ender_chest": "minecraft:air",
+		"minecraft:cobblestone_wall": "minecraft:air",
+		"minecraft:crafting_table": "minecraft:air",
+		"minecraft:furnace": "minecraft:air",
+		"minecraft:jukebox": "minecraft:air",
+		"minecraft:oak_stairs": "minecraft:air",
+		"minecraft:spruce_stairs": "minecraft:air",
+		"minecraft:birch_stairs": "minecraft:air",
+		"minecraft:jungle_stairs": "minecraft:air",
+		"minecraft:acacia_stairs": "minecraft:air",
+		"minecraft:dark_oak_stairs": "minecraft:air",
+		"minecraft:crimson_stairs": "minecraft:air",
+		"minecraft:warped_stairs": "minecraft:air",
+		"minecraft:mangrove_stairs": "minecraft:air",
+		"minecraft:oak_fence": "minecraft:air",
+		"minecraft:spruce_fence": "minecraft:air",
+		"minecraft:birch_fence": "minecraft:air",
+		"minecraft:jungle_fence": "minecraft:air",
+		"minecraft:acacia_fence": "minecraft:air",
+		"minecraft:dark_oak_fence": "minecraft:air",
+		"minecraft:crimson_fence": "minecraft:air",
+		"minecraft:warped_fence": "minecraft:air",
+		"minecraft:mangrove_fence": "minecraft:air",
+		"minecraft:oak_fence_gate": "minecraft:air",
+		"minecraft:spruce_fence_gate": "minecraft:air",
+		"minecraft:birch_fence_gate": "minecraft:air",
+		"minecraft:jungle_fence_gate": "minecraft:air",
+		"minecraft:acacia_fence_gate": "minecraft:air",
+		"minecraft:dark_oak_fence_gate": "minecraft:air",
+		"minecraft:crimson_fence_gate": "minecraft:air",
+		"minecraft:warped_fence_gate": "minecraft:air",
+		"minecraft:mangrove_fence_gate": "minecraft:air",
+		"minecraft:oak_door": "minecraft:air",
+		"minecraft:spruce_door": "minecraft:air",
+		"minecraft:birch_door": "minecraft:air",
+		"minecraft:jungle_door": "minecraft:air",
+		"minecraft:acacia_door": "minecraft:air",
+		"minecraft:dark_oak_door": "minecraft:air",
+		"minecraft:crimson_door": "minecraft:air",
+		"minecraft:warped_door": "minecraft:air",
+		"minecraft:mangrove_door": "minecraft:air",
+		"minecraft:oak_trapdoor": "minecraft:air",
+		"minecraft:spruce_trapdoor": "minecraft:air",
+		"minecraft:birch_trapdoor": "minecraft:air",
+		"minecraft:jungle_trapdoor": "minecraft:air",
+		"minecraft:acacia_trapdoor": "minecraft:air",
+		"minecraft:dark_oak_trapdoor": "minecraft:air",
+		"minecraft:crimson_trapdoor": "minecraft:air",
+		"minecraft:warped_trapdoor": "minecraft:air",
+		"minecraft:mangrove_trapdoor": "minecraft:air",
+		"minecraft:oak_button": "minecraft:air",
+		"minecraft:spruce_button": "minecraft:air",
+		"minecraft:birch_button": "minecraft:air",
+		"minecraft:jungle_button": "minecraft:air",
+		"minecraft:acacia_button": "minecraft:air",
+		"minecraft:dark_oak_button": "minecraft:air",
+		"minecraft:crimson_button": "minecraft:air",
+		"minecraft:warped_button": "minecraft:air",
+		"minecraft:mangrove_button": "minecraft:air",
+		"minecraft:stone_button": "minecraft:air",
+		"minecraft:lever": "minecraft:air",
+		"minecraft:torch": "minecraft:air",
+	}
+}
