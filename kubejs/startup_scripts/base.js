@@ -31,6 +31,12 @@ StartupEvents.registry('block', event => {
 })
 
 StartupEvents.registry('item', event => {
+    /**
+     * 
+     * @param {String} id 
+     * @param {Internal.Supplier} properties
+     * @author ssquoshi
+     */
     function registerGun(id, properties) {
         event.createCustom(id, () => new $GunItem(properties(new $ItemProperties())))
     }

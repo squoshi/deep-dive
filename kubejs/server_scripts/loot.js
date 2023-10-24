@@ -1,6 +1,9 @@
 const $ForgeRegistries = Java.loadClass('net.minecraftforge.registries.ForgeRegistries')
 
 LootJS.modifiers(event => {
+    /**
+     * Nuke.
+     */
     event.addLootTableModifier(/.*/).removeLoot(Ingredient.all)
 
     let ores = {
@@ -16,54 +19,6 @@ LootJS.modifiers(event => {
     Object.keys(ores).forEach(ore => {
         event.addBlockLootModifier(ore).addLoot(ores[ore])
     })
-
-    // let themaModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         themaModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'thema'
-    //     }).addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 8 * themaModifier).withChance(30), Item.of('numismaticoverhaul:silver_coin', 3 * themaModifier).withChance(20), Item.of('numismaticoverhaul:gold_coin', 1 * themaModifier).withChance(5)])
-    // let altumModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         altumModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'altum'
-    //     }).addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 10 * altumModifier).withChance(30), Item.of('numismaticoverhaul:silver_coin', 6 * altumModifier).withChance(25), Item.of('numismaticoverhaul:gold_coin', 1 * altumModifier).withChance(8)])
-    // let caligoModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         caligoModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'caligo'
-    //     })
-    //     .addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 10 * caligoModifier).withChance(38), Item.of('numismaticoverhaul:silver_coin', 6 * caligoModifier).withChance(40), Item.of('numismaticoverhaul:gold_coin', 1 * caligoModifier).withChance(8)])
-    // let copiosusModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         copiosusModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'copiosus'
-    //     })
-    //     .addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 10 * copiosusModifier).withChance(50), Item.of('numismaticoverhaul:silver_coin', 6 * copiosusModifier).withChance(40), Item.of('numismaticoverhaul:gold_coin', 2 * copiosusModifier).withChance(12)])
-    // let noirModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         noirModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'noir'
-    //     })
-    //     .addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 16 * noirModifier).withChance(50), Item.of('numismaticoverhaul:silver_coin', 10 * noirModifier).withChance(55), Item.of('numismaticoverhaul:gold_coin', 3 * noirModifier).withChance(12)])
-    // let tenebrisModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         tenebrisModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'tenebris'
-    //     })
-    //     .addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 20 * tenebrisModifier).withChance(55), Item.of('numismaticoverhaul:silver_coin', 15 * tenebrisModifier).withChance(60), Item.of('numismaticoverhaul:gold_coin', 3 * tenebrisModifier).withChance(12)])
-    // let abyssModifier = 1
-    // event.addLootTypeModifier(LootType.ENTITY)
-    //     .entityPredicate(entity => {
-    //         abyssModifier = entity.getMaxHealth() / 30
-    //         return entity.isLiving() && entity.isMonster() && entity.persistentData.stratum == 'abyss'
-    //     })
-    //     .addWeightedLoot([1, 2], [Item.of('numismaticoverhaul:bronze_coin', 20 * abyssModifier).withChance(60), Item.of('numismaticoverhaul:silver_coin', 25 * abyssModifier).withChance(65), Item.of('numismaticoverhaul:gold_coin', 4 * abyssModifier).withChance(16)])
 })
 
 const possibleCoinDrops = {
@@ -150,7 +105,12 @@ EntityEvents.death(event => {
             })
         }
     })
-    //https://github.com/MrCrayfish/MrCrayfishGunMod/blob/1.19.X/src/main/java/com/mrcrayfish/guns/item/GunItem.java#L57
+    /**
+     * 
+     * @param {Internal.ItemStack} item
+     * @author ssquoshi 
+     * @returns {Internal.GunItem}
+     */
     function getModifiedGun(item) {
         return item.getItem().getModifiedGun(item)
     }

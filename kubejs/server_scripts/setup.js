@@ -3,9 +3,6 @@
 // requires: create
 // requires: kubejsadditions
 
-/**
- * @ssquoshi
-*/
 const $CurrencyHelper = Java.loadClass('com.nyfaria.numismaticoverhaul.currency.CurrencyHelper')
 const $CurrencyHolderAttacher = Java.loadClass('com.nyfaria.numismaticoverhaul.cap.CurrencyHolderAttacher')
 
@@ -22,6 +19,7 @@ const attributes = {
 /**
  * ![](https://media.tenor.com/GOabrbLMl4AAAAAd/plink-cat-plink.gif)
  * @private You don't need to use this outside of this file.
+ * @author ssquoshi
  * @param {Internal.Player} player
  * @param {boolean} pushToDefault
  * @param {boolean} setFromDefault
