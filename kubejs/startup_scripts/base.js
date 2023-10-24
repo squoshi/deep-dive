@@ -11,25 +11,25 @@ const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
  * @author ssquoshi
  */
 function createMaterial(material, hardness, resistance, name) {
-    if (name.includes(':')) {
+    if (material.indexOf(':') != -1) {
         let [namespace, id] = material.split(':')
         StartupEvents.registry('block', event => {
-            event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name)
+            event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem()
         })
         StartupEvents.registry('item', event => {
             event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
             for (let i = 0; i < 5; i++) {
-                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag('deep_dive:refined_ores/quality_${i + 1}')
+                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`)
             }
         })
     } else {
         StartupEvents.registry('block', event => {
-            event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name)
+            event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem()
         })
         StartupEvents.registry('item', event => {
-            event.create(material).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
+            event.create(`deep_dive:${material}`).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
             for (let i = 0; i < 5; i++) {
-                event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag('deep_dive:refined_ores/quality_${i + 1}')
+                event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`)
             }
         })
     }
