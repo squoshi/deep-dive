@@ -1,0 +1,33 @@
+{
+    "replace": true,
+    "trades": [
+        {
+            "type": "goblintraders:basic",
+            "experience": 4,
+            "max_trades": 24,
+            "offer_item": {
+                "count": 6,
+                "item": "scorchedguns:scorched_shell"
+            },
+            "payment_item": {
+                "count": 18,
+                "item": "numismaticoverhaul:bronze_coin"
+            },
+            "price_multiplier": 0.0
+        },
+        {
+            "type": "goblintraders:basic",
+            "experience": 2,
+            "max_trades": 40,
+            "offer_item": {
+                "count": 4,
+                "item": "scorchedguns:experimental_round"
+            },
+            "payment_item": {
+                "count": 10,
+                "item": "numismaticoverhaul:bronze_coin"
+            },
+            "price_multiplier": 0.0
+        }
+    ]
+}

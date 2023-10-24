@@ -161,4 +161,3 @@ ItemEvents.modification(event => {
         item.maxStackSize = 64
     })
 })
-

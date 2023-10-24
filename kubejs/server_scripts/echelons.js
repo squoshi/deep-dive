@@ -137,9 +137,7 @@ PlayerEvents.tick(event => {
     let stratum = Object.keys(strata).find(stratum => y >= strata[stratum].min_y && y <= strata[stratum].max_y)
     if (!stratum) return
     if (player.persistentData.stratum == stratum) return
-    console.log('test1')
     player.persistentData.stratum = stratum
-    console.log('test')
     player.paint({ stratum_bg: { type: 'rectangle', x: 0, y: 6, w: 100, h: 15, color: '#661111111', alignX: 'center', alignY: 'top' } })
     player.paint({ stratum_bg2: { type: 'rectangle', x: 0, y: 7, w: 98, h: 13, color: '#661111111', alignX: 'center', alignY: 'top' } })
     player.paint({ stratum: { type: 'text', text: strata[stratum].name, alignX: 'center', alignY: 'top', x: 0, y: 10, color: '#FFFFFF' } })

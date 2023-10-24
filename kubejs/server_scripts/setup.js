@@ -135,3 +135,10 @@ PlayerEvents.tick(event => {
     event.player.paint({ hpx: { x: 26, y: -21, w: width, h: 12, color: '#FFFF0000', alignX: 'left', alignY: 'bottom', type: 'rectangle' } })
     event.player.paint({ hpxtxt: { type: 'text', x: 27, y: -22, text: `${Math.round(event.player.getHealth())}/${Math.round(event.player.getMaxHealth())}`, color: '#FFFFFFFF', alignX: 'left', alignY: 'bottom', scale: 0.7 } })
 })
+
+EntityEvents.hurt(event => {
+    if (!event?.source?.actual) return
+    if (!event.source.actual.isPlayer()) return
+    let player = event.source.actual
+    if (!player.getMainHandItem().hasTag('deep_dive:guns') || !player.getMainHandItem().hasTag('deep_dive:melee_weapons')) event.cancel()
+})
