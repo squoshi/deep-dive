@@ -2,6 +2,129 @@ const $GunItem = Java.loadClass('com.mrcrayfish.guns.item.GunItem')
 const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties')
 const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
 
+/**
+ * 
+ * @param {String} material 
+ * @param {Number} hardness 
+ * @param {Number} resistance 
+ * @param {String} name 
+ * @author ssquoshi
+ */
+function createMaterial(material, hardness, resistance, name) {
+    if (name.includes(':')) {
+        let [namespace, id] = material.split(':')
+        StartupEvents.registry('block', event => {
+            event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name)
+        })
+        StartupEvents.registry('item', event => {
+            event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
+            for (let i = 0; i < 5; i++) {
+                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag('deep_dive:refined_ores/quality_${i + 1}')
+            }
+        })
+    } else {
+        StartupEvents.registry('block', event => {
+            event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name)
+        })
+        StartupEvents.registry('item', event => {
+            event.create(material).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
+            for (let i = 0; i < 5; i++) {
+                event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag('deep_dive:refined_ores/quality_${i + 1}')
+            }
+        })
+    }
+}
+
+/**
+ * Tier: 1
+ * Rarity: 1
+ * Radiation: 3%
+ * Stability: Stable
+ * Fuel: Yes
+ */
+createMaterial('deep_dive:solanite', 2.0, 6, 'Solanite')
+/**
+ * Tier: 1
+ * Rarity: 1
+ * Stability: Stable
+ * Ammo: High-caliber
+ */
+createMaterial('deep_dive:cryonite', 2.0, 6, 'Cryonite')
+/**
+ * Tier: 1
+ * Rarity: 2
+ * Stability: Stable
+ * Protection: Blast-resistant
+ * Weapon Material: Yes
+ */
+createMaterial('deep_dive:quasium', 2.0, 6, 'Quasium')
+/**
+ * Tier:1
+ * Rarity: 3
+ * Radiation: 5%
+ * Stability: Stable
+ * Ammo: Low-caliber
+ */
+createMaterial('deep_dive:eronium', 2.0, 6, 'Eronium')
+
+/**
+ * Tier: 2
+ * Rarity: 4
+ * Stability: Stable
+ * Weapon Material: Yes
+ */
+createMaterial('deep_dive:serendine', 2.0, 6, 'Serendine')
+/**
+ * Tier: 2
+ * Rarity: 5
+ * Radiation: 8%
+ * Stability: Stable
+ * Ammo: Any
+ * Protection: Good
+ */
+createMaterial('deep_dive:meteorite', 2.0, 6, 'Meteorite')
+/**
+ * Tier: 2
+ * Rarity: 5
+ * Radiation: 5%
+ * Stability: Stable
+ * Protection: Good
+ * Weapon Material: Yes
+ */
+createMaterial('deep_dive:adamantite', 2.0, 6, 'Adamantite')
+/**
+ * Tier: 2
+ * Rarity: 9
+ * Radiation: 70%
+ * Stability: Unstable
+ * Fuel: Yes
+ */
+createMaterial('deep_dive:radiite', 2.0, 6, 'Radiite')
+/**
+ * Tier: 3
+ * Rarity: 6
+ * Fuel: Yes
+ * Radiation: 75%
+ */
+createMaterial('deep_dive:proto_zaplorium', 2.0, 6, 'Proto-Zaplorium')
+/**
+ * Tier: 3
+ * Rarity: 7
+ * Radiation: 3%
+ * Stability: Stable
+ * Protection: Good
+ * Weapon Material: Yes
+ */
+createMaterial('deep_dive:endurium', 2.0, 6, 'Endurium')
+/**
+ * Tier: 3
+ * Rarity: 10
+ * Radiation: 99%
+ * Stability: Unstable
+ * Fuel: Yes
+ */
+createMaterial('deep_dive:zaplorium', 2.0, 6, 'Zaplorium')
+
 StartupEvents.registry('block', event => {
     // Re-create vanilla blocks for biome color support
     event.create('minecraft:stone').hardness(1.5).resistance(6).soundType('stone').color(0, 'grass')
@@ -12,22 +135,6 @@ StartupEvents.registry('block', event => {
     event.create('minecraft:tuff').hardness(1.5).resistance(6).soundType('stone').color(0, 'grass')
     event.create('minecraft:dripstone_block').hardness(1.5).resistance(6).soundType('stone').color(0, 'grass')
     event.create('minecraft:gravel', 'falling').hardness(1.0).resistance(3).soundType('gravel').color(0, 'grass')
-
-    // Tier 1 Materials
-    event.create('solanite').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/solanite').tagBlock('forge:ores/solanite').tagItem('forge:ores').tagBlock('forge:ores').displayName('Solanite') // Rarity 1 (3% rad); basic fuel
-    event.create('cryonite').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/cryonite').tagBlock('forge:ores/cryonite').tagItem('forge:ores').tagBlock('forge:ores').displayName('Cryonite') // Rarity 1 (none); good for high-caliber ammunition
-    event.create('quasium').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/quasium').tagBlock('forge:ores/quasium').tagItem('forge:ores').tagBlock('forge:ores').displayName('Quasium') // Rarity 2 (none); blast-resistant, good for protection
-    event.create('eronium').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/eronium').tagBlock('forge:ores/eronium').tagItem('forge:ores').tagBlock('forge:ores').displayName('Eronium') // Rarity 3 (5% rad); good for small ammunition
-    // Tier 2 Materials
-    event.create('serendine').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/serendine').tagBlock('forge:ores/serendine').tagItem('forge:ores').tagBlock('forge:ores').displayName('Serendine') // Rarity 4 (none); high blast resistance and melting point, good for firearms
-    event.create('meteorite').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/meteorite').tagBlock('forge:ores/meteorite').tagItem('forge:ores').tagBlock('forge:ores').displayName('Meteorite') // Rarity 5 (8% rad); good for most ammunition
-    event.create('adamantite').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/adamantite').tagBlock('forge:ores/adamantite').tagItem('forge:ores').tagBlock('forge:ores').displayName('Adamantite') // Rarity 5 (5% rad); strong, good for protection
-    // Tier 3 Materials
-    event.create('proto_zaplorium').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/proto_zaplorium').tagBlock('forge:ores/proto_zaplorium').tagItem('forge:ores').tagBlock('forge:ores').displayName('Proto-Zaplorium') // Rarity 6; good as nuclear fuel but not as good as the real thing
-    event.create('endurium').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/endurium').tagBlock('forge:ores/endurium').tagItem('forge:ores').tagBlock('forge:ores').displayName('Endurium') // Rarity 7 (3% rad; 2% unstable); good for firearms as it is heat-resistant and blast-resistant
-    // Unstable / High Rad
-    event.create('radiite').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/radiite').tagBlock('forge:ores/radiite').tagItem('forge:ores').tagBlock('forge:ores').displayName('Radiite') // Rarity 9 (70% rad; 10% unstable)
-    event.create('zaplorium').hardness(2.0).resistance(6).soundType('chain').tagItem('forge:ores/zaplorium').tagBlock('forge:ores/zaplorium').tagItem('forge:ores').tagBlock('forge:ores').displayName('Zaplorium') // Rarity 10 (99% unstable); better as nuclear fuel than its prototype
 })
 
 StartupEvents.registry('item', event => {
@@ -40,7 +147,7 @@ StartupEvents.registry('item', event => {
     function registerGun(id, properties) {
         event.createCustom(id, () => new $GunItem(properties(new $ItemProperties())))
     }
-    registerGun('test_gun', p => p.stacksTo(1).tab(TAB_KUBEJS))
+    registerGun('deep_dive:test_gun', p => p.stacksTo(1).tab(TAB_KUBEJS))
 })
 
 ItemEvents.modification(event => {
