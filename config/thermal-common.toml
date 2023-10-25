@@ -5,25 +5,25 @@
 
 		[World.Ores.Silver]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 
 		[World.Ores.Lead]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 
 		[World.Ores.Nickel]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 
 		[World.Ores.Sulfur]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 
 		[World.Ores.Tin]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 
 		[World.Ores.Niter]
 			#Whether this ore should spawn in the world.
-			Enable = true
+			Enable = false
 

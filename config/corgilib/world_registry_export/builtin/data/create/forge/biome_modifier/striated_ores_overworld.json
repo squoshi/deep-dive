@@ -1,0 +1,6 @@
+{
+	"biomes": "#minecraft:is_overworld",
+	"features": "create:striated_ores_overworld",
+	"step": "underground_ores",
+	"type": "forge:add_features"
+}

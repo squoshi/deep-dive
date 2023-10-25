@@ -11,28 +11,31 @@ const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
  * @author ssquoshi
  */
 function createMaterial(material, hardness, resistance, name) {
+    let registeredBlocks = []
     if (material.indexOf(':') != -1) {
         let [namespace, id] = material.split(':')
         StartupEvents.registry('block', event => {
-            event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem()
+            registeredBlocks.push(event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
             event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
             for (let i = 0; i < 5; i++) {
-                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`)
+                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${id}`)
             }
         })
     } else {
         StartupEvents.registry('block', event => {
-            event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem()
+            registeredBlocks.push(event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
             event.create(`deep_dive:${material}`).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
             for (let i = 0; i < 5; i++) {
-                event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`)
+                let item = event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${material}`)
+                if (i == 2) item.rarity()
             }
         })
     }
+    return registeredBlocks
 }
 
 /**
@@ -42,14 +45,14 @@ function createMaterial(material, hardness, resistance, name) {
  * Stability: Stable
  * Fuel: Yes
  */
-createMaterial('deep_dive:solanite', 2.0, 6, 'Solanite')
+let SOLANITE = createMaterial('deep_dive:solanite', 2.0, 6, 'Solanite')
 /**
  * Tier: 1
  * Rarity: 1
  * Stability: Stable
  * Ammo: High-caliber
  */
-createMaterial('deep_dive:cryonite', 2.0, 6, 'Cryonite')
+let CRYONITE = createMaterial('deep_dive:cryonite', 2.0, 6, 'Cryonite')
 /**
  * Tier: 1
  * Rarity: 2
@@ -57,7 +60,7 @@ createMaterial('deep_dive:cryonite', 2.0, 6, 'Cryonite')
  * Protection: Blast-resistant
  * Weapon Material: Yes
  */
-createMaterial('deep_dive:quasium', 2.0, 6, 'Quasium')
+let QUASIUM = createMaterial('deep_dive:quasium', 2.0, 6, 'Quasium')
 /**
  * Tier:1
  * Rarity: 3
@@ -65,7 +68,7 @@ createMaterial('deep_dive:quasium', 2.0, 6, 'Quasium')
  * Stability: Stable
  * Ammo: Low-caliber
  */
-createMaterial('deep_dive:eronium', 2.0, 6, 'Eronium')
+let ERONIUM = createMaterial('deep_dive:eronium', 2.0, 6, 'Eronium')
 
 /**
  * Tier: 2
@@ -73,7 +76,7 @@ createMaterial('deep_dive:eronium', 2.0, 6, 'Eronium')
  * Stability: Stable
  * Weapon Material: Yes
  */
-createMaterial('deep_dive:serendine', 2.0, 6, 'Serendine')
+let SERENDINE = createMaterial('deep_dive:serendine', 2.0, 6, 'Serendine')
 /**
  * Tier: 2
  * Rarity: 5
@@ -82,7 +85,7 @@ createMaterial('deep_dive:serendine', 2.0, 6, 'Serendine')
  * Ammo: Any
  * Protection: Good
  */
-createMaterial('deep_dive:meteorite', 2.0, 6, 'Meteorite')
+let METEORITE = createMaterial('deep_dive:meteorite', 2.0, 6, 'Meteorite')
 /**
  * Tier: 2
  * Rarity: 5
@@ -91,7 +94,7 @@ createMaterial('deep_dive:meteorite', 2.0, 6, 'Meteorite')
  * Protection: Good
  * Weapon Material: Yes
  */
-createMaterial('deep_dive:adamantite', 2.0, 6, 'Adamantite')
+let ADAMANTITE = createMaterial('deep_dive:adamantite', 2.0, 6, 'Adamantite')
 /**
  * Tier: 2
  * Rarity: 9
@@ -99,14 +102,14 @@ createMaterial('deep_dive:adamantite', 2.0, 6, 'Adamantite')
  * Stability: Unstable
  * Fuel: Yes
  */
-createMaterial('deep_dive:radiite', 2.0, 6, 'Radiite')
+let RADIITE = createMaterial('deep_dive:radiite', 2.0, 6, 'Radiite')
 /**
  * Tier: 3
  * Rarity: 6
  * Fuel: Yes
  * Radiation: 75%
  */
-createMaterial('deep_dive:proto_zaplorium', 2.0, 6, 'Proto-Zaplorium')
+let PROTOZAPLORIUM = createMaterial('deep_dive:proto_zaplorium', 2.0, 6, 'Proto-Zaplorium')
 /**
  * Tier: 3
  * Rarity: 7
@@ -115,7 +118,7 @@ createMaterial('deep_dive:proto_zaplorium', 2.0, 6, 'Proto-Zaplorium')
  * Protection: Good
  * Weapon Material: Yes
  */
-createMaterial('deep_dive:endurium', 2.0, 6, 'Endurium')
+let ENDURIUM = createMaterial('deep_dive:endurium', 2.0, 6, 'Endurium')
 /**
  * Tier: 3
  * Rarity: 10
@@ -123,7 +126,7 @@ createMaterial('deep_dive:endurium', 2.0, 6, 'Endurium')
  * Stability: Unstable
  * Fuel: Yes
  */
-createMaterial('deep_dive:zaplorium', 2.0, 6, 'Zaplorium')
+let ZAPLORIUM = createMaterial('deep_dive:zaplorium', 2.0, 6, 'Zaplorium')
 
 StartupEvents.registry('block', event => {
     // Re-create vanilla blocks for biome color support
@@ -159,5 +162,29 @@ ItemEvents.modification(event => {
     })
     event.modify('numismaticoverhaul:bronze_coin', item => {
         item.maxStackSize = 64
+    })
+})
+
+WorldgenEvents.remove(event => {
+    event.removeOres(props => {
+        props.worldgenLayer = 'underground_ores'
+        props.blocks = [
+            "minecraft:coal_ore",
+            "minecraft:iron_ore",
+            "minecraft:gold_ore",
+            "minecraft:lapis_ore",
+            "minecraft:redstone_ore",
+            "minecraft:diamond_ore",
+            "minecraft:emerald_ore",
+            "minecraft:copper_ore",
+            "minecraft:deepslate_copper_ore",
+            "minecraft:deepslate_emerald_ore",
+            "minecraft:deepslate_diamond_ore",
+            "minecraft:deepslate_gold_ore",
+            "minecraft:deepslate_iron_ore",
+            "minecraft:deepslate_lapis_ore",
+            "minecraft:deepslate_redstone_ore",
+            "minecraft:deepslate_coal_ore",
+        ]
     })
 })

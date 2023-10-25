@@ -106,11 +106,14 @@ PlayerEvents.tick(event => {
 Convert experience into persistent data
 */
 PlayerEvents.tick(event => {
+    console.log(event.player.totalExperience)
     if (!event.player.persistentData.xp) event.player.persistentData.xp = 0
     if (event.player.totalExperience > 0) {
         event.player.persistentData.xp += event.player.totalExperience
-        event.player.totalExperience = 0
     }
+    event.player.totalExperience = 0
+    event.player.experienceLevel = 0
+    event.player.experienceProgress = 0
 })
 
 /*
@@ -140,5 +143,5 @@ EntityEvents.hurt(event => {
     if (!event?.source?.actual) return
     if (!event.source.actual.isPlayer()) return
     let player = event.source.actual
-    if (!player.getMainHandItem().hasTag('deep_dive:guns') || !player.getMainHandItem().hasTag('deep_dive:melee_weapons')) event.cancel()
+    if (!player.getMainHandItem().hasTag('deep_dive:guns')) event.cancel()
 })

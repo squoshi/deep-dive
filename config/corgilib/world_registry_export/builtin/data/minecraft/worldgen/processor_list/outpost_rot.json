@@ -1,0 +1,8 @@
+{
+	"processors": [
+		{
+			"integrity": 0.05000000074505806,
+			"processor_type": "minecraft:block_rot"
+		}
+	]
+}
