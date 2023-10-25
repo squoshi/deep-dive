@@ -64,7 +64,6 @@ Attributes reset on player death. This is a workaround.
 */
 EntityEvents.spawned(event => {
     if (event.entity.type != 'minecraft:player') return
-    console.log('test')
     if (enableLogging) console.log(event.entity.persistentData) // returns {}
     Utils.server.scheduleInTicks(3, () => {
         if (enableLogging) console.log(event.entity.persistentData) // returns { attributes: { default: [ 'minecraft:generic.max_health=100', 'forge:step_height_addition=0.5', 'forge:entity_gravity=0.04', 'minecraft:generic.movement_speed=0.15' ] } }
@@ -106,7 +105,6 @@ PlayerEvents.tick(event => {
 Convert experience into persistent data
 */
 PlayerEvents.tick(event => {
-    console.log(event.player.totalExperience)
     if (!event.player.persistentData.xp) event.player.persistentData.xp = 0
     if (event.player.totalExperience > 0) {
         event.player.persistentData.xp += event.player.totalExperience
@@ -121,7 +119,6 @@ Allow players to collect coins instantly instead of into their inventory
 */
 ItemEvents.pickedUp(event => {
     if (event.item.id == 'numismaticoverhaul:gold_coin' || event.item.id == 'numismaticoverhaul:silver_coin' || event.item.id == 'numismaticoverhaul:bronze_coin') {
-        console.log($CurrencyHelper.getValue([event.item]))
         event.player.inventory.extractItem(event.player.inventory.find(event.item), event.item.count, false)
         $CurrencyHolderAttacher.getExampleHolderUnwrap(event.player).modify($CurrencyHelper.getValue([event.item]))
         return false
