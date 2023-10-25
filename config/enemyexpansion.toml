@@ -10,31 +10,35 @@
 	"Cockatrice Spawning Depth" = 60.0
 
 [mobReplacement]
-	"Petriman Spawns Alongside Zombie" = 1.0
-	"Silverking Spawns Alongside Spider" = 0.4
-	"Crawler/Intruder Spawns Alongside Creeper" = 0.3
-	"Vampire Spawns Alongside Skeleton" = 0.75
-	"Troll Spawns Alongside Enderman" = 1.0
-	#(This is the only way in which Cinders will ever spawn - Disable at your own risk!)
-	"Cinder Replaces Blaze" = 0.2
-	"Tarantula Replaces Dripstone Caves Mobs" = 1.0
-	"Scorpion Replaces Desert Spider" = 1.0
 	"Random Enemy Expansion Zombie Replacement" = 0.0
-	"Illagers Replace Villagers" = 0.0
-	"Ravagers Replace Iron Golems" = 0.0
-	#Ravagers are replaced with Marauders on spawn, but only if they spawn in water
-	"Marauders Replace Water-bound Ravagers" = 1.0
-	#(This is the only way in which Sputters naturally spawn - Disable at your own risk!)
-	"Sputter Spawns Alongside Strider" = 0.35
-	"Hornet Replaces Vex" = 0.0
 	"Skeleton Horseman Addition" = 0.03
+	"Petriman Zombie Replacement" = 1.0
+	"Silverking Spider Replacement" = 0.4
+	"Crawler/Intruder Creeper Replacement" = 0.3
+	"Vampire Skeleton Replacement" = 0.75
+	"Troll Enderman Replacement" = 1.0
+	#(This is the only way in which Cinders will ever spawn - Disable at your own risk!)
+	"Cinder Blaze Replacement" = 0.2
+	"Boar Pig Replacement" = 0.65
+	"Bull Cow Replacement" = 0.75
+	"Ram Sheep Replacement" = 0.35
+	"Rooster Chicken Replacement" = 0.55
+	"Tarantula Spider Replacement" = 1.0
+	"Scorpion Spider Replacement" = 1.0
+	"Illager Villager Replacement" = 0.0
+	"Iron Golem Ravager Replacement" = 0.0
+	#Ravagers are replaced with Marauders on spawn, but only if they spawn in water
+	"Ravager Marauder Replacement" = 1.0
+	#(This is the only way in which Sputters naturally spawn - Disable at your own risk!)
+	"Sputter Strider Addition" = 0.35
+	"Hornet Vex Replacement" = 0.0
 
 [mobReplacementDepth]
-	"Petriman Spawns Alongside Zombie Depth" = 55.0
-	"Silverking Spawns Alongside Spider Depth" = -10.0
-	"Crawler/Intruder Spawns Alongside Creeper Depth" = -10.0
-	"Vampire Spawns Alongside Skeleton Depth" = -10.0
-	"Troll Spawns Alongside Enderman Depth" = -10.0
+	"Petriman Zombie Replacement Depth" = 55.0
+	"Silverking Spider Replacement Depth" = -10.0
+	"Crawler/Intruder Creeper Replacement Depth" = -10.0
+	"Vampire Skeleton Replacement Depth" = -10.0
+	"Troll Enderman Replacement Depth" = -10.0
 
 [hatWearerSpawning]
 	#Some Zombies and Skeletons will spawn wearing certain special gear. edit the minecraft:is_meatury tag to choose what biomes these mobs spawn in.
@@ -55,8 +59,8 @@
 	"Guardsmask Wearer Spawning" = 0.005
 	#Champion Mobs Wearing Hats are different from regular Champion spawns, in that they can spawn at different levels and also come with Absorption as a permanent effect
 	"Headwear-wearing mobs always spawn as Champions" = true
-	"Resting Vigor Wearer Spawning" = 0.01
-	"Cockatrice Head Wearer Spawning" = 0.001
+	#A developer of this mod has defined this config option with a blank comment, which causes obscure bugs in Forge's config system and will cause a crash in the future. Please report this to the mod author.
+	"Resting Vigor Wearers Spawning" = 0.01
 
 [armorWearerSpawning]
 	"Leather Wearer Spawning" = 0.03
@@ -65,8 +69,6 @@
 	"Gold Wearer Spawning" = 0.007
 	"Diamond Wearer Spawning" = 0.004
 	"Netherite Wearer Spawning" = 0.001
-	"Emerald Wearer Spawning" = 0.007
-	"Amethyst Wearer Spawning" = 0.007
 
 [miscOptions]
 	"Punching Ram Drops Wool Chance" = 0.0
@@ -97,6 +99,7 @@
 	"Random Phantom Size" = true
 	"Skeleton Death Kills Skeleton Horses Chance" = 0.95
 	"Eyestalkers are Hostile by default" = false
+	"Burning Undead mobs gain Speed III Chance" = 0.0
 
 [effectSpawning]
 	"Chance of Strength effect applied on mob-spawn" = 0.01

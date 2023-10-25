@@ -11,11 +11,12 @@ const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
  * @author ssquoshi
  */
 function createMaterial(material, hardness, resistance, name) {
+    let sound = new SoundType(1.0, 1.0, 'minecraft:block.chain.break', 'minecraft:block.netherite_block.step', 'minecraft:block.netherite_block.place', 'minecraft:block.netherite_block.hit', 'minecraft:block.netherite_block.fall')
     let registeredBlocks = []
     if (material.indexOf(':') != -1) {
         let [namespace, id] = material.split(':')
         StartupEvents.registry('block', event => {
-            registeredBlocks.push(event.create(material).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
+            registeredBlocks.push(event.create(material).hardness(hardness).resistance(resistance).soundType(sound).tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
             event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
@@ -25,7 +26,7 @@ function createMaterial(material, hardness, resistance, name) {
         })
     } else {
         StartupEvents.registry('block', event => {
-            registeredBlocks.push(event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType('chain').tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
+            registeredBlocks.push(event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType(sound).tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
             event.create(`deep_dive:${material}`).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
