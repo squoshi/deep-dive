@@ -21,6 +21,8 @@ bk/
 impossible_data/
 kubejs/probe/
 essential/
+config/mm/dont_edit/
+config/corgilib
 
 *.class
 

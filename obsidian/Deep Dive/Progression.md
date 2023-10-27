@@ -9,13 +9,13 @@ Extractions have multiple types, which are listed in this table:
 | :---      |    :----   |      :----:     |
 | Bounty | Kill **x** number of **y** | 0 |
 | Mining Expedition | Mine **x** amount of **y** | 0 |
-| Timed Mining Expedition | Mine **x** amount of **y** in **z** time | 0 |
+| Timed Mining Expedition | Mine **x** amount of **y** in **z** time | 250 |
 | Timed Bounty | Kill **x** number of **y** in **z** time | 500 |
 | Rescue | Rescue **x**, bring them to base | 750 |
 | Timed Rescue | Rescue **x**, bring them to base in **z** time | 2000 |
 | Retrieval | Retrieve **x** from **y** | 1000 |
 | Zone Capture | Capture **x** zones | 1500 |
-| Timed Zone Capture | Capture **x** zones in **z** time | 2000 |
+| Timed Zone Capture | Capture **x** zones in **y** time | 2000 |
 | Zone Defense | Defend zone **x** for **y** time | 3000 |
 
 ## Currency

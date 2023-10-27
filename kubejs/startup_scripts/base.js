@@ -1,6 +1,11 @@
+//priority: 100
+
 const $GunItem = Java.loadClass('com.mrcrayfish.guns.item.GunItem')
 const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties')
 const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
+const BiomeFilter = Java.loadClass('dev.latvian.mods.kubejs.level.gen.filter.biome.BiomeFilter')
+
+global.minecraft = {}
 
 /**
  * 
@@ -166,26 +171,64 @@ ItemEvents.modification(event => {
     })
 })
 
+global.minecraft.worldgen_defaults = {
+    configured_feature: Utils.getRegistry('worldgen/configured_feature').getIds(),
+    ores: [
+        "minecraft:coal_ore",
+        "minecraft:iron_ore",
+        "minecraft:gold_ore",
+        "minecraft:lapis_ore",
+        "minecraft:redstone_ore",
+        "minecraft:diamond_ore",
+        "minecraft:emerald_ore",
+        "minecraft:copper_ore",
+        "minecraft:deepslate_copper_ore",
+        "minecraft:deepslate_emerald_ore",
+        "minecraft:deepslate_diamond_ore",
+        "minecraft:deepslate_gold_ore",
+        "minecraft:deepslate_iron_ore",
+        "minecraft:deepslate_lapis_ore",
+        "minecraft:deepslate_redstone_ore",
+        "minecraft:deepslate_coal_ore",
+    ],
+    'GenerationStep': [
+        "raw_generation",
+        "lakes",
+        "local_modifications",
+        "underground_structures",
+        "surface_structures",
+        "strongholds",
+        "underground_ores",
+        "underground_decoration",
+        "fluid_springs",
+        "vegetal_decoration",
+        "top_layer_modification",
+    ],
+    'GenerationStep$Decoration': [
+        'FLUID_SPRINGS',
+        'LAKES',
+        'LOCAL_MODIFICATIONS',
+        'RAW_GENERATION',
+        'STRONGHOLDS',
+        'SURFACE_STRUCTURES',
+        'TOP_LAYER_MODIFICATION',
+        'UNDERGROUND_DECORATION',
+        'UNDERGROUND_ORES',
+        'UNDERGROUND_STRUCTURES',
+        'VEGETAL_DECORATION',
+    ]
+}
 WorldgenEvents.remove(event => {
     event.removeOres(props => {
         props.worldgenLayer = 'underground_ores'
-        props.blocks = [
-            "minecraft:coal_ore",
-            "minecraft:iron_ore",
-            "minecraft:gold_ore",
-            "minecraft:lapis_ore",
-            "minecraft:redstone_ore",
-            "minecraft:diamond_ore",
-            "minecraft:emerald_ore",
-            "minecraft:copper_ore",
-            "minecraft:deepslate_copper_ore",
-            "minecraft:deepslate_emerald_ore",
-            "minecraft:deepslate_diamond_ore",
-            "minecraft:deepslate_gold_ore",
-            "minecraft:deepslate_iron_ore",
-            "minecraft:deepslate_lapis_ore",
-            "minecraft:deepslate_redstone_ore",
-            "minecraft:deepslate_coal_ore",
-        ]
+        props.blocks = global.minecraft.worldgen_defaults.ores
+    })
+    // let featureRemoveBlacklist = [
+    //     'create:striated_ores_overworld',
+    // ]
+    global.minecraft.worldgen_defaults['GenerationStep$Decoration'].forEach(step => {
+        // if (featureRemoveBlacklist.some(f => f == dec)) return
+        if (step == 'UNDERGROUND_ORES') return
+        event.removeAllFeatures(BiomeFilter.ALWAYS_TRUE, step)
     })
 })
