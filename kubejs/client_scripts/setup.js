@@ -22,7 +22,7 @@ ClientEvents.tick(event => {
     event.player.yBodyRot = event.player.yaw
 })
 
-ClientEvents.tick(event => {
-    event.player.yHeadRot = event.level.time % 5.625 * 64
-    // event.player.setMotion(0, 0.1, 0)
-})
+// ClientEvents.tick(event => {
+//     event.player.yHeadRot = event.level.time % 5.625 * 64
+//     // event.player.setMotion(0, 0.1, 0)
+// })
