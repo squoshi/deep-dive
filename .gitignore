@@ -51,7 +51,7 @@ options.txt
 imgui.ini
 patchouli_data*
 minecraftinstance*
-usernamecache*
-config/voicechat/username-cache.json
+*usernamecache*
+*username-cache*
 ops.json
 whitelist.json

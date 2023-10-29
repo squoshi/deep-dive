@@ -142,3 +142,8 @@ EntityEvents.hurt(event => {
     let player = event.source.actual
     if (!player.getMainHandItem().hasTag('deep_dive:guns')) event.cancel()
 })
+
+LevelEvents.tick(event => {
+    event.level.rainLevel = 0
+    event.level.oRainLevel = 0
+})
