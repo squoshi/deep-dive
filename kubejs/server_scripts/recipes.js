@@ -15,4 +15,4 @@ ServerEvents.tags('item', event => {
     event.add('deep_dive:mining_tools', [
         'immersiveengineering:drill',
     ])
-});
+})

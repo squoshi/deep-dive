@@ -21,3 +21,33 @@ ClientEvents.tick(event => {
     if (event.player.motionX == 0 && event.player.motionZ == 0) return
     event.player.yBodyRot = event.player.yaw
 })
+
+ItemEvents.tooltip(event => {
+    for (let ore of global.deep_dive.ores.tier1) {
+        let items = ore.items
+        items.forEach((item, index) => {
+            if (index == 0) return
+            event.addAdvanced(item.get(), (item, advanced, text) => {
+                text.add(1, `§8Quality: ${index}`)
+            })
+        })
+    }
+    for (let ore of global.deep_dive.ores.tier2) {
+        let items = ore.items
+        items.forEach((item, index) => {
+            if (index == 0) return
+            event.addAdvanced(item.get(), (item, advanced, text) => {
+                text.add(1, `§8Quality: ${index}`)
+            })
+        })
+    }
+    for (let ore of global.deep_dive.ores.tier3) {
+        let items = ore.items
+        items.forEach((item, index) => {
+            if (index == 0) return
+            event.addAdvanced(item.get(), (item, advanced, text) => {
+                text.add(1, `§8Quality: ${index}`)
+            })
+        })
+    }
+})

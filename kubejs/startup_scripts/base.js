@@ -6,6 +6,7 @@ const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
 const BiomeFilter = Java.loadClass('dev.latvian.mods.kubejs.level.gen.filter.biome.BiomeFilter')
 
 global.minecraft = {}
+global.deep_dive = {}
 
 /**
  * 
@@ -18,15 +19,22 @@ global.minecraft = {}
 function createMaterial(material, hardness, resistance, name) {
     let sound = new SoundType(1.0, 1.0, 'minecraft:block.chain.break', 'minecraft:block.netherite_block.step', 'minecraft:block.netherite_block.place', 'minecraft:block.netherite_block.hit', 'minecraft:block.netherite_block.fall')
     let registeredBlocks = []
+    let registeredItems = []
     if (material.indexOf(':') != -1) {
         let [namespace, id] = material.split(':')
         StartupEvents.registry('block', event => {
             registeredBlocks.push(event.create(material).hardness(hardness).resistance(resistance).soundType(sound).tagItem(`forge:ores/${id}`).tagBlock(`forge:ores/${id}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
-            event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
+            let item1 = event.create(material).displayName(name).tag(`forge:ores/${id}`).tag('forge:ores')
+            registeredItems.push(item1)
             for (let i = 0; i < 5; i++) {
-                event.create(`${namespace}:refined_${id}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${id}`)
+                let item2 = event.create(`${namespace}:refined_${id}_quality_${i + 1}`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${id}`)
+                if (i == 0) item2.displayName(`§7Refined ${name}`)
+                if (i == 2) item2.displayName(`§aRefined ${name}`)
+                if (i == 3) item2.displayName(`§bRefined ${name}`)
+                if (i == 4) item2.displayName(`§5Refined ${name}`)
+                registeredItems.push(item2)
             }
         })
     } else {
@@ -34,14 +42,22 @@ function createMaterial(material, hardness, resistance, name) {
             registeredBlocks.push(event.create(`deep_dive:${material}`).hardness(hardness).resistance(resistance).soundType(sound).tagItem(`forge:ores/${material}`).tagBlock(`forge:ores/${material}`).tagItem('forge:ores').tagBlock('forge:ores').displayName(name).noItem())
         })
         StartupEvents.registry('item', event => {
-            event.create(`deep_dive:${material}`).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
+            let item1 = event.create(`deep_dive:${material}`).displayName(name).tag(`forge:ores/${material}`).tag('forge:ores')
+            registeredItems.push(item1)
             for (let i = 0; i < 5; i++) {
-                let item = event.create(`deep_dive:refined_${material}_quality_${i + 1}`).displayName(`Refined ${name} (Quality ${i + 1})`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${material}`)
-                if (i == 2) item.rarity()
+                let item2 = event.create(`deep_dive:refined_${material}_quality_${i + 1}`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${material}`)
+                if (i == 0) item2.displayName(`§7Refined ${name}`)
+                if (i == 2) item2.displayName(`§aRefined ${name}`)
+                if (i == 3) item2.displayName(`§bRefined ${name}`)
+                if (i == 4) item2.displayName(`§5Refined ${name}`)
+                registeredItems.push(item2)
             }
         })
     }
-    return registeredBlocks
+    return {
+        blocks: registeredBlocks,
+        items: registeredItems,
+    }
 }
 
 /**
@@ -133,6 +149,25 @@ let ENDURIUM = createMaterial('deep_dive:endurium', 2.0, 6, 'Endurium')
  * Fuel: Yes
  */
 let ZAPLORIUM = createMaterial('deep_dive:zaplorium', 2.0, 6, 'Zaplorium')
+
+global.deep_dive.ores = {}
+global.deep_dive.ores.tier1 = [
+    SOLANITE,
+    CRYONITE,
+    QUASIUM,
+    ERONIUM,
+]
+global.deep_dive.ores.tier2 = [
+    SERENDINE,
+    METEORITE,
+    ADAMANTITE,
+    RADIITE,
+]
+global.deep_dive.ores.tier3 = [
+    PROTOZAPLORIUM,
+    ENDURIUM,
+    ZAPLORIUM,
+]
 
 StartupEvents.registry('block', event => {
     // Re-create vanilla blocks for biome color support
