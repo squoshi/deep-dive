@@ -31,9 +31,10 @@ function createMaterial(material, hardness, resistance, name) {
             for (let i = 0; i < 5; i++) {
                 let item2 = event.create(`${namespace}:refined_${id}_quality_${i + 1}`).tag(`deep_dive:refined_ores/quality_${i + 1}/${id}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${id}`)
                 if (i == 0) item2.displayName(`§7Refined ${name}`)
-                if (i == 2) item2.displayName(`§aRefined ${name}`)
-                if (i == 3) item2.displayName(`§bRefined ${name}`)
-                if (i == 4) item2.displayName(`§5Refined ${name}`)
+                if (i == 1) item2.displayName(`§aRefined ${name}`)
+                if (i == 2) item2.displayName(`§bRefined ${name}`)
+                if (i == 3) item2.displayName(`§5Refined ${name}`)
+                if (i == 4) item2.displayName(`§6Refined ${name}`)
                 registeredItems.push(item2)
             }
         })
@@ -47,9 +48,10 @@ function createMaterial(material, hardness, resistance, name) {
             for (let i = 0; i < 5; i++) {
                 let item2 = event.create(`deep_dive:refined_${material}_quality_${i + 1}`).tag(`deep_dive:refined_ores/quality_${i + 1}/${material}`).tag(`deep_dive:refined_ores/quality_${i + 1}`).texture(`deep_dive:item/refined_materials/${material}`)
                 if (i == 0) item2.displayName(`§7Refined ${name}`)
-                if (i == 2) item2.displayName(`§aRefined ${name}`)
-                if (i == 3) item2.displayName(`§bRefined ${name}`)
-                if (i == 4) item2.displayName(`§5Refined ${name}`)
+                if (i == 1) item2.displayName(`§aRefined ${name}`)
+                if (i == 2) item2.displayName(`§bRefined ${name}`)
+                if (i == 3) item2.displayName(`§5Refined ${name}`)
+                if (i == 4) item2.displayName(`§6Refined ${name}`)
                 registeredItems.push(item2)
             }
         })
