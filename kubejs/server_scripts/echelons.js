@@ -110,7 +110,12 @@ const strata = {
     }
 }
 
+EntityEvents.checkSpawn(event => {
+    if (event.type == 'NATURAL') event.entity.persistentData.naturalSpawn = true
+})
+
 EntityEvents.spawned(event => {
+    if (!event.entity.persistentData.naturalSpawn) return
     let entity = event.entity
     if (entity.type == 'minecraft:player' || entity.type == 'drg_flares:drg_flare' || entity.type == 'minecraft:item' || entity.type == 'minecraft:falling_block') return
     let y = entity.y
@@ -123,7 +128,7 @@ EntityEvents.spawned(event => {
     let attributes = strata[stratum].attribute_modifiers
     Object.keys(attributes).forEach(attribute => {
         if (enableLogging) console.log(['1-------------------------------------', entity.getAttribute(attribute).getBaseValue(), attribute])
-        entity.getAttribute(attribute).setBaseValue(entity.getAttribute(attribute).getBaseValue() * attributes[attribute])
+        entity.modifyAttribute(attribute, 'deep_dive:stratum', attributes[attribute], 'multiply_total')
         entity.setHealth(entity.getMaxHealth())
         if (enableLogging) console.log(['2-------------------------------------', entity.getAttribute(attribute).getBaseValue()])
     })
@@ -138,9 +143,13 @@ PlayerEvents.tick(event => {
     if (!stratum) return
     if (player.persistentData.stratum == stratum) return
     player.persistentData.stratum = stratum
-    player.paint({ stratum_bg: { type: 'rectangle', x: 0, y: 6, w: 100, h: 15, color: '#661111111', alignX: 'center', alignY: 'top' } })
-    player.paint({ stratum_bg2: { type: 'rectangle', x: 0, y: 7, w: 98, h: 13, color: '#661111111', alignX: 'center', alignY: 'top' } })
-    player.paint({ stratum: { type: 'text', text: strata[stratum].name, alignX: 'center', alignY: 'top', x: 0, y: 10, color: '#FFFFFF' } })
+    player.paint({
+        bulk: [{
+            stratum_bg: { type: 'rectangle', x: 0, y: 6, w: 100, h: 15, color: '#661111111', alignX: 'center', alignY: 'top' },
+            stratum_bg2: { type: 'rectangle', x: 0, y: 7, w: 98, h: 13, color: '#661111111', alignX: 'center', alignY: 'top' },
+            stratum: { type: 'text', text: strata[stratum].name, alignX: 'center', alignY: 'top', x: 0, y: 10, color: '#FFFFFF' }
+        }]
+    })
 })
 
 PlayerEvents.loggedIn(event => {
@@ -150,7 +159,11 @@ PlayerEvents.loggedIn(event => {
     let stratum = Object.keys(strata).find(stratum => y >= strata[stratum].min_y && y <= strata[stratum].max_y)
     if (!stratum) return
     player.persistentData.stratum = stratum
-    player.paint({ stratum_bg: { type: 'rectangle', x: 0, y: 6, w: 100, h: 15, color: '#661111111', alignX: 'center', alignY: 'top' } })
-    player.paint({ stratum_bg2: { type: 'rectangle', x: 0, y: 7, w: 98, h: 13, color: '#661111111', alignX: 'center', alignY: 'top' } })
-    player.paint({ stratum: { type: 'text', text: strata[stratum].name, alignX: 'center', alignY: 'top', x: 0, y: 10, color: '#FFFFFF' } })
+    player.paint({
+        bulk: [{
+            stratum_bg: { type: 'rectangle', x: 0, y: 6, w: 100, h: 15, color: '#661111111', alignX: 'center', alignY: 'top' },
+            stratum_bg2: { type: 'rectangle', x: 0, y: 7, w: 98, h: 13, color: '#661111111', alignX: 'center', alignY: 'top' },
+            stratum: { type: 'text', text: strata[stratum].name, alignX: 'center', alignY: 'top', x: 0, y: 10, color: '#FFFFFF' }
+        }]
+    })
 })
