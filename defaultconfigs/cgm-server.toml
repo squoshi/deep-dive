@@ -22,7 +22,7 @@
 		soundFadeThreshold = 90
 		#Volume of the ringing sound when deafened will play at this volume, before eventually fading to 0.
 		#Range: 0.0 ~ 1.0
-		ringVolume = 1.0
+		ringVolume = 0.2
 
 	#Audio properties
 	[server.audio]
