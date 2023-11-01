@@ -112,6 +112,7 @@ const strata = {
 
 EntityEvents.checkSpawn(event => {
     if (event.type == 'NATURAL') event.entity.persistentData.naturalSpawn = true
+    else event.entity.persistentData.naturalSpawn = false
 })
 
 EntityEvents.spawned(event => {
