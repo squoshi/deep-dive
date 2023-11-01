@@ -1,0 +1,28 @@
+{
+    "schema_version": 2,
+    "failed_reloads_per_session": 5,
+    "default_packs": [
+        "file/Tech RPG Font.zip"
+    ],
+    "default_overrides": {
+        "force_compatible": true
+    },
+    "pack_overrides": {
+        "vanilla": {
+            "title": "\"Vanilla Assets\"",
+            "description": "\"Resource pack from Minecraft\""
+        },
+        "server": {
+            "default_position": "BOTTOM",
+            "force_compatible": true,
+            "fixed_position": false
+        },
+        "1": [
+            "file/Tech RPG Font.zip"
+        ],
+        "$$1": {
+            "hidden": true,
+            "required": true
+        }
+    }
+}
