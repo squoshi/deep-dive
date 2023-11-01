@@ -5,6 +5,8 @@ const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties
 const TAB_KUBEJS = Java.loadClass('dev.latvian.mods.kubejs.KubeJS').tab
 const BiomeFilter = Java.loadClass('dev.latvian.mods.kubejs.level.gen.filter.biome.BiomeFilter')
 
+Platform.mods.kubejs.name = 'Deep Dive'
+
 global.minecraft = {}
 global.deep_dive = {}
 
