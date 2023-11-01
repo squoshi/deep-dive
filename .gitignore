@@ -56,7 +56,7 @@ minecraftinstance*
 *username-cache*
 ops.json
 whitelist.json
-create_manifest.py
-generate.py
-manifest-template.json
-mods.txt
+# create_manifest.py
+# generate.py
+# manifest-template.json
+# mods.txt
