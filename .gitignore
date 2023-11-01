@@ -23,6 +23,7 @@ kubejs/probe/
 essential/
 config/mm/dont_edit/
 config/corgilib
+__pycache__/
 
 *.class
 
@@ -55,3 +56,7 @@ minecraftinstance*
 *username-cache*
 ops.json
 whitelist.json
+create_manifest.py
+generate.py
+manifest-template.json
+mods.txt
