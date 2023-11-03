@@ -110,13 +110,8 @@ const strata = {
     }
 }
 
-EntityEvents.checkSpawn(event => {
-    if (event.type == 'NATURAL') event.entity.persistentData.naturalSpawn = true
-    else event.entity.persistentData.naturalSpawn = false
-})
-
 EntityEvents.spawned(event => {
-    if (!event.entity.persistentData.naturalSpawn) return
+    if (!(event.entity.nbt['forge:spawn_type'] == 'NATURAL' || event.entity.nbt['forge:spawn_type'] == 'SPAWN_EGG')) return
     let entity = event.entity
     if (entity.type == 'minecraft:player' || entity.type == 'drg_flares:drg_flare' || entity.type == 'minecraft:item' || entity.type == 'minecraft:falling_block') return
     let y = entity.y

@@ -38,6 +38,7 @@ __pycache__/
 *.nar
 *.ear
 *.zip
+!shaderpacks/*.zip
 *.tar.gz
 *.rar
 *.curseclient
