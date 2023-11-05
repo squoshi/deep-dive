@@ -17,6 +17,3 @@ The Python scripts require the pip packages `requests` and `icecream`. You can i
 
 ### Notes
 Make sure to pull request any changes you make, and always run the `create_manifest.py` script with Python 3.11+ every time you update, downgrade, remove or add a mod!
-
-# Credits
-EminGT (EminGTR on Curse) for Complementary Reimagined (not included by default)
