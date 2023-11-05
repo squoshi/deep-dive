@@ -13,7 +13,7 @@
 	cavefogdensity = 0.8
 	#Defines the color of cave fog, in the decimal color format. If cave fog is active, this will be multiplied with the current fog color.
 	#Range: 0 ~ 16777215
-	caveFogColor = 3355443
+	caveFogColor = 0
 	#Defines a specific fog start, fog end, and cave fog end per biome. Entries are comma separated, structured like "<biomeid>,<fog start>,<fog end>,<cave fog color>"
 	#Example: ["minecraft:plains,0.1,1.2,5066351", "minecraft:nether_wastes,0,0.5,5056548"]
 	biomeFogMap = []
