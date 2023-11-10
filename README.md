@@ -1,5 +1,7 @@
 # Deep Dive
 
+![Deep Dive logo](https://github.com/squoshi/deep-dive/blob/main/deep_dive.png)
+
 This is the official repository for the modpack Deep Dive, a full conversion Minecraft modpack inspired by the popular game Deep Rock Galactic.
 ## Contribution
 
