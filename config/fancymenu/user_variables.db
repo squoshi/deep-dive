@@ -2,7 +2,7 @@ type = cached_variables
 
 variables {
   sp_bx = 10
-  ticks = 1356
+  ticks = 771
   mp_bx = 20
   gameplay_menu = 0
 }

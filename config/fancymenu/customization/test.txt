@@ -40,6 +40,12 @@ customization {
 
 customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  action = setbuttonlabel
+  value = M
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
   loopbackgroundanimations = true
   restartbackgroundanimations = true
   action = setbuttontexture
@@ -133,7 +139,7 @@ customization {
 customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
   action = setbuttonlabel
-  value = 
+  value = O
 }
 
 customization {
@@ -141,8 +147,8 @@ customization {
   loopbackgroundanimations = true
   restartbackgroundanimations = true
   action = setbuttontexture
-  backgroundhovered = kubejs/assets/deep_dive/menu/button/options_hover.png
-  backgroundnormal = kubejs/assets/deep_dive/menu/button/options.png
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
 }
 
 customization {
@@ -169,7 +175,7 @@ customization {
 customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
   action = setbuttonlabel
-  value = 
+  value = Q
 }
 
 customization {
@@ -177,8 +183,8 @@ customization {
   loopbackgroundanimations = true
   restartbackgroundanimations = true
   action = setbuttontexture
-  backgroundhovered = kubejs/assets/deep_dive/menu/button/quit_hover.png
-  backgroundnormal = kubejs/assets/deep_dive/menu/button/quit.png
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
 }
 
 customization {
@@ -229,6 +235,12 @@ customization {
   width = 20
   action = resizebutton
   height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  action = setbuttonlabel
+  value = S
 }
 
 customization {
