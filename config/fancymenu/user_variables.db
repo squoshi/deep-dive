@@ -1,5 +1,9 @@
 type = cached_variables
 
 variables {
+  sp_bx = 10
+  ticks = 8536802
+  mp_bx = 20
+  gameplay_menu = 1
 }
 
