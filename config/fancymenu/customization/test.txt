@@ -1,0 +1,389 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.TitleScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = true
+  action = backgroundoptions
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_copyright_button%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=604346%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  orientation = mid-centered
+  x = -10
+  action = movebutton
+  y = -56
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  width = 20
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  action = vanilla_button_visibility_requirements
+  [loading_requirement:fancymenu_visibility_requirement_is_variable_value][requirement_mode:if][req_id:1d12bd8d-3ffb-47df-a8a8-b039e3af4a681699531479804] = gameplay_menu:1
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
+  orientation = mid-centered
+  x = 23
+  action = movebutton
+  y = -5
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
+  action = setbuttonlabel
+  value = A
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
+  action = setbuttondescription
+  description = Accessibility...
+}
+
+customization {
+  identifier = %id=376322%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=628382%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=628382%
+  orientation = mid-centered
+  x = -99
+  action = movebutton
+  y = -11
+}
+
+customization {
+  identifier = %id=628382%
+  action = setbuttonlabel
+  value = S
+}
+
+customization {
+  identifier = %id=628382%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  orientation = mid-centered
+  x = -43
+  action = movebutton
+  y = -5
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  width = 20
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  action = setbuttonlabel
+  value = 
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/options_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/options.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  action = setbuttondescription
+  description = Options...
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  orientation = mid-centered
+  x = 51
+  action = movebutton
+  y = -8
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  width = 20
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  action = setbuttonlabel
+  value = 
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/quit_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/quit.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  action = setbuttondescription
+  description = Quit
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  orientation = mid-centered
+  x = -71
+  action = movebutton
+  y = -8
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  action = setbuttonlabel
+  value = L
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  action = setbuttondescription
+  description = Language...
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  orientation = mid-centered
+  x = -10
+  action = movebutton
+  y = -33
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  width = 20
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  action = setbuttontexture
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  [loading_requirement:fancymenu_visibility_requirement_is_variable_value][requirement_mode:if][req_id:f05cf3d2-fad5-4a1e-8a61-373eeea4d17b1699531454744] = gameplay_menu:1
+  action = vanilla_button_visibility_requirements
+}
+
+customization {
+  identifier = %id=button_compatibility_id:forge_titlescreen_mods_button%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_realms_button%
+  action = hidebutton
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 186
+  width = 268
+  action = deep_customization_element:title_screen_forge_top
+  actionid = ffa5d1fc-ba94-4c9f-8127-c4bd3951381a1699433512750
+  y = 4
+  height = 19
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 2
+  width = 122
+  action = deep_customization_element:title_screen_branding
+  actionid = de3d95f8-faea-41c5-8ce5-db9b00aa5c7c1699433512750
+  y = 291
+  height = 50
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 411
+  width = 228
+  action = deep_customization_element:title_screen_forge_copyright
+  actionid = 995e5c9b-06c0-4d73-898c-5b5ee77459c01699433512750
+  y = 323
+  height = 9
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 423
+  width = 13
+  action = deep_customization_element:title_screen_realms_notification
+  actionid = a32b33fb-51f4-4435-8df2-77cf51fe2dbf1699433512750
+  y = 185
+  height = 13
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 183
+  width = 274
+  action = deep_customization_element:title_screen_logo
+  actionid = 3d1ba123-77be-47c9-80f2-0cb45173ff681699433512750
+  y = 30
+  height = 52
+}
+
+customization {
+  orientation = original
+  splash_color = #ffff00
+  hidden = true
+  x = 0
+  width = 60
+  splash_rotation = -20
+  action = deep_customization_element:title_screen_splash
+  actionid = fa652c36-1995-4ad6-8cf6-174813c6476a1699433512750
+  y = 0
+  height = 30
+}
+
+customization {
+  orientation = mid-centered
+  restartbackgroundanimations = true
+  buttonaction = set_variable;sp_bx:10%btnaction_splitter_fm%set_variable;mp_bx:20%btnaction_splitter_fm%set_variable;gameplay_menu:0%btnaction_splitter_fm%
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  label = Play
+  loopbackgroundanimations = true
+  [loading_requirement:fancymenu_visibility_requirement_is_variable_value][requirement_mode:if][req_id:a2768d7f-6406-47e1-84a8-04c42506e6fd1699525130157] = gameplay_menu:1
+  x = -15
+  width = 30
+  action = addbutton
+  actionid = 320e2275-86b5-443a-9a25-5e7b64e4a2bc1699525145769
+  y = -10
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background_hover.png
+  height = 30
+}
+
+customization {
+  tickeraction_0_set_variable = ticks:{"placeholder":"calc","values":{"expression":"{"placeholder":"getvariable","values":{"name":"ticks"}} + 1","decimal":"false"}}
+  orientation = top-left
+  tick_delay = 0
+  is_async = false
+  x = 12
+  width = 70
+  action = custom_layout_element:fancymenu_customization_item_ticker
+  actionid = 1ba93704-0384-440c-b7db-a762d0b060b41699525358985
+  y = 249
+  tick_mode = normal
+  height = 70
+}
+
+customization {
+  orientation = mid-centered
+  restartbackgroundanimations = true
+  buttonaction = set_variable;sp_bx:10%btnaction_splitter_fm%set_variable;mp_bx:20%btnaction_splitter_fm%set_variable;gameplay_menu:1%btnaction_splitter_fm%
+  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
+  label = Play
+  loopbackgroundanimations = true
+  [loading_requirement:fancymenu_visibility_requirement_is_variable_value][requirement_mode:if][req_id:a2768d7f-6406-47e1-84a8-04c42506e6fd1699525130157] = gameplay_menu:0
+  x = -15
+  width = 30
+  action = addbutton
+  actionid = 08dc813f-5718-4c90-9970-8b7fcd32fcc21699524236095
+  y = -10
+  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+  height = 30
+}
+
+customization {
+  tickeraction_0_set_variable = gameplay_menu:0
+  orientation = top-left
+  tick_delay = 0
+  tickeraction_1_set_variable = ticks:0
+  is_async = false
+  x = 12
+  width = 70
+  action = custom_layout_element:fancymenu_customization_item_ticker
+  actionid = ac3ce192-b4f5-44bb-9243-67623ea20c9c1699607623697
+  y = 177
+  tick_mode = on_menu_load
+  height = 70
+}
+
