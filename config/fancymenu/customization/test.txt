@@ -14,11 +14,6 @@ customization {
 }
 
 customization {
-  identifier = %id=button_compatibility_id:mc_titlescreen_copyright_button%
-  action = hidebutton
-}
-
-customization {
   identifier = %id=604346%
   action = hidebutton
 }
@@ -51,6 +46,12 @@ customization {
   action = setbuttontexture
   backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
   backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  action = setbuttondescription
+  description = Play online...
 }
 
 customization {
@@ -91,34 +92,6 @@ customization {
 customization {
   identifier = %id=376322%
   action = hidebutton
-}
-
-customization {
-  identifier = %id=628382%
-  action = hidebutton
-}
-
-customization {
-  identifier = %id=628382%
-  orientation = mid-centered
-  x = -99
-  action = movebutton
-  y = -11
-}
-
-customization {
-  identifier = %id=628382%
-  action = setbuttonlabel
-  value = S
-}
-
-customization {
-  identifier = %id=628382%
-  loopbackgroundanimations = true
-  restartbackgroundanimations = true
-  action = setbuttontexture
-  backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
-  backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
 }
 
 customization {
@@ -223,6 +196,11 @@ customization {
 }
 
 customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_copyright_button%
+  action = hidebutton
+}
+
+customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
   orientation = mid-centered
   x = -10
@@ -250,6 +228,12 @@ customization {
   action = setbuttontexture
   backgroundhovered = kubejs/assets/deep_dive/menu/button/background_hover.png
   backgroundnormal = kubejs/assets/deep_dive/menu/button/background.png
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  action = setbuttondescription
+  description = Singleplayer...
 }
 
 customization {

@@ -1,0 +1,12 @@
+{
+    "providers": [
+        {
+            "type": "ttf",
+            "file": "minecraft:exo_bold.ttf",
+            "shift": [0, 1.0],
+			"size": 10.0,
+			"oversample": 25.0
+
+        }
+	]
+}
