@@ -271,3 +271,18 @@ WorldgenEvents.remove(event => {
         event.removeAllFeatures(BiomeFilter.ALWAYS_TRUE, step)
     })
 })
+
+if (Platform.isClientEnvironment()) {
+    let $ScreenshakeHandler = Java.loadClass('team.lodestar.lodestone.handlers.ScreenshakeHandler')
+    let $ScreenshakeInstance = Java.loadClass('team.lodestar.lodestone.systems.screenshake.ScreenshakeInstance')
+    let $Easing = Java.loadClass('team.lodestar.lodestone.systems.easing.Easing')
+
+    global.GunFireEvent = function (event) {
+        if (!event.isClient()) return
+        $ScreenshakeHandler.addScreenshake($ScreenshakeInstance(4).setIntensity(0.15, 0.1, 0.2).setEasing($Easing.QUARTIC_OUT, $Easing.SINE_IN_OUT))
+    }
+    
+    ForgeEvents.onEvent('com.mrcrayfish.guns.event.GunFireEvent$Post', event => {
+        global.GunFireEvent(event)
+    })
+}

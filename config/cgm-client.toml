@@ -42,7 +42,7 @@ buttonAlignment = "RIGHT"
 		#Range: 0.0 ~ 45.0
 		cameraRollAngle = 1.5
 		#When enabled, the Camera Roll Effect is only applied when holding a weapon.
-		restrictCameraRollToWeapons = true
+		restrictCameraRollToWeapons = false
 		#Enables the sprinting animation on weapons for better immersion. This only applies to weapons that support a sprinting animation.
 		sprintingAnimation = true
 		#The intensity of the custom bobbing animation while holding a gun

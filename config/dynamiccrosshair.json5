@@ -8,7 +8,7 @@
 		"onEntity": true,
 		"holdingTool": "Always",
 		"holdingMeleeWeapon": true,
-		"holdingRangedWeapon": "IfInteractable",
+		"holdingRangedWeapon": "Always",
 		"holdingThrowable": "IfInteractable",
 		"holdingShield": true,
 		"holdingBlock": "IfInteractable",
@@ -131,7 +131,7 @@
 	"enableTweaks": true,
 	"additionalTools": "",
 	"additionalMeleeWeapons": "",
-	"additionalRangedWeapons": "",
+	"additionalRangedWeapons": "scorchedguns:r498_gauss_cannon;deep_dive:test_gun;scorchedguns:frontier_sidearm;scorchedguns:astella",
 	"additionalThrowables": "",
 	"additionalUsableItems": "",
 	"additionalInteractableBlocks": ""

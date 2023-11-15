@@ -1,0 +1,2 @@
+set_variable:sp_bx;10
+set_variable:sp_by;10
