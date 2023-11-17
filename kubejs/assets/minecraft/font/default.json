@@ -6,7 +6,12 @@
             "shift": [0, 1.0],
 			"size": 10.0,
 			"oversample": 25.0
-
+        }, {
+            "type": "bitmap",
+            "file": "deep_dive:font/bullet.png",
+            "height": 8,
+            "ascent": 8,
+            "chars": ["\uF030"]
         }
 	]
 }

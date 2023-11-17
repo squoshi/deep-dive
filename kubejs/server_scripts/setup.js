@@ -134,6 +134,16 @@ PlayerEvents.tick(event => {
     event.player.paint({ hpxbg2: { x: 26, y: -21, w: 148, h: 12, color: '#FF330000', alignX: 'left', alignY: 'bottom', type: 'rectangle' } })
     event.player.paint({ hpx: { x: 26, y: -21, w: width, h: 12, color: '#FFFF0000', alignX: 'left', alignY: 'bottom', type: 'rectangle' } })
     event.player.paint({ hpxtxt: { type: 'text', x: 27, y: -22, text: `${Math.round(event.player.getHealth())}/${Math.round(event.player.getMaxHealth())}`, color: '#FFFFFFFF', alignX: 'left', alignY: 'bottom', scale: 0.7 } })
+    if (event.player.mainHandItem?.nbt?.AmmoCount == 0 || event.player.mainHandItem?.nbt?.AmmoCount) {
+        event.player.paint({ ammocount: { type: 'text', x: 27, y: -36, text: `\uF030 ${event.player.mainHandItem.nbt.AmmoCount}`, color: '#FFFFFFFF', alignX: 'left', alignY: 'bottom', scale: 1.4 } })
+    } else if (!event.player.mainHandItem?.nbt?.AmmoCount) {
+        event.player.paint({ ammocount: { remove: true } })
+    }
+    if (event.player.mainHandItem?.nbt?.AmmoCount == 0) {
+        event.player.paint({ ammoReload: { type: 'text', x: 22, y: 1, text: `§cRELOAD!`, color: '#FFFFFFFF', alignX: 'center', alignY: 'center', scale: 1.0 } })
+    } else {
+        event.player.paint({ ammoReload: { remove: true } })
+    }
 })
 
 EntityEvents.hurt(event => {
@@ -146,4 +156,8 @@ EntityEvents.hurt(event => {
 LevelEvents.tick(event => {
     event.level.rainLevel = 0
     event.level.oRainLevel = 0
+})
+
+ItemEvents.rightClicked(event => {
+    if (event.item.id == 'cgm:grenade') event.cancel()
 })

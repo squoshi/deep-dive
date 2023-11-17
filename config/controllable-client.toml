@@ -32,13 +32,13 @@
 		rotationSpeed = 25.0
 		#The sensitivity of the camera's pitch rotation when applying the rotation speed. Setting to 1.0 would mean applying 100% of the rotation speed.
 		#Range: 0.0 ~ 1.0
-		pitchSensitivity = 0.75
+		pitchSensitivity = 0.9
 		#The sensitivity of the camera's yaw rotation when applying the rotation speed. Setting to 1.0 would mean applying 100% of the rotation speed.
 		#Range: 0.0 ~ 1.0
 		yawSensitivity = 1.0
 		#The speed which the cursor or virtual mouse moves around the screen
 		#Range: 0.0 ~ 50.0
-		mouseSpeed = 15.0
+		mouseSpeed = 30.0
 		#If enabled, shows common actions when displaying available on the screen
 		#Allowed Values: ALL, MINIMAL, NONE
 		showActions = "MINIMAL"

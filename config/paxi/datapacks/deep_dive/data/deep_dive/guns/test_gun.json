@@ -11,7 +11,6 @@
         "gripType": "cgm:two_handed",
         "maxAmmo": 16,
         "rate": 3,
-        "recoilAdsReduction": 0.5,
         "recoilAngle": 3,
         "reloadAmount": 1,
         "spread": 8,
@@ -24,20 +23,10 @@
                 "yOffset": 3.3,
                 "zOffset": 2.65
             },
-            "scope": {
-                "scale": 0.75,
-                "yOffset": 3.7,
-                "zOffset": 6.0
-            },
             "stock": {
                 "yOffset": 3.3,
                 "zOffset": 7.95
             }
-        },
-        "zoom": {
-            "fovModifier": 0.7,
-            "yOffset": 4.5,
-            "zOffset": -1.0
         }
     },
     "projectile": {

@@ -96,7 +96,7 @@
 			}
 		},
 		"modUsableItem": {
-			"style": "RoundBrackets",
+			"style": "Dot",
 			"color": {
 				"crosshairColor": "Unchanged",
 				"customColor": -5588020,
@@ -133,6 +133,6 @@
 	"additionalMeleeWeapons": "",
 	"additionalRangedWeapons": "scorchedguns:r498_gauss_cannon;deep_dive:test_gun;scorchedguns:frontier_sidearm;scorchedguns:astella",
 	"additionalThrowables": "",
-	"additionalUsableItems": "",
+	"additionalUsableItems": "scorchedguns:r498_gauss_cannon;deep_dive:test_gun;scorchedguns:frontier_sidearm;scorchedguns:astella",
 	"additionalInteractableBlocks": ""
 }
