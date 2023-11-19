@@ -51,3 +51,7 @@ ItemEvents.tooltip(event => {
         })
     }
 })
+
+NetworkEvents.dataReceived('hit_marker', event => {
+    Client.getInstance().player.playSound('cgm:item.pistol.silenced_fire', 0.5, 1.8)
+})

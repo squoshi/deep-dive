@@ -137,12 +137,12 @@ PlayerEvents.tick(event => {
     if (event.player.mainHandItem?.nbt?.AmmoCount == 0 || event.player.mainHandItem?.nbt?.AmmoCount) {
         event.player.paint({ ammocount: { type: 'text', x: 27, y: -36, text: `\uF030 ${event.player.mainHandItem.nbt.AmmoCount}`, color: '#FFFFFFFF', alignX: 'left', alignY: 'bottom', scale: 1.4 } })
     } else if (!event.player.mainHandItem?.nbt?.AmmoCount) {
-        event.player.paint({ ammocount: { remove: true } })
+        event.player.paint({ ammocount: { type: 'text', remove: true } })
     }
     if (event.player.mainHandItem?.nbt?.AmmoCount == 0) {
         event.player.paint({ ammoReload: { type: 'text', x: 22, y: 1, text: `§cRELOAD!`, color: '#FFFFFFFF', alignX: 'center', alignY: 'center', scale: 1.0 } })
     } else {
-        event.player.paint({ ammoReload: { remove: true } })
+        event.player.paint({ ammoReload: { type: 'text', remove: true } })
     }
 })
 
@@ -150,6 +150,7 @@ EntityEvents.hurt(event => {
     if (!event?.source?.actual) return
     if (!event.source.actual.isPlayer()) return
     let player = event.source.actual
+    event.source.actual.sendData('hit_marker', {})
     if (!player.getMainHandItem().hasTag('deep_dive:guns')) event.cancel()
 })
 

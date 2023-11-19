@@ -1,5 +1,5 @@
 {
-	"dynamicCrosshair": "Disabled",
+	"dynamicCrosshair": "Advanced",
 	"disableDebugCrosshair": false,
 	"thirdPersonCrosshair": false,
 	"hideWithScreen": true,
@@ -30,7 +30,7 @@
 			}
 		},
 		"onBlock": {
-			"style": "Cross",
+			"style": "Caret",
 			"color": {
 				"crosshairColor": "Unchanged",
 				"customColor": -5588020,
@@ -38,7 +38,7 @@
 			}
 		},
 		"onEntity": {
-			"style": "DiagonalCross",
+			"style": "Default",
 			"color": {
 				"crosshairColor": "Unchanged",
 				"customColor": -5588020,
