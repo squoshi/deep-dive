@@ -1,11 +1,11 @@
 {
-	"dynamicCrosshair": "Advanced",
+	"dynamicCrosshair": "Simple",
 	"disableDebugCrosshair": false,
 	"thirdPersonCrosshair": false,
 	"hideWithScreen": true,
 	"crosshairConfig": {
-		"onBlock": "IfTargeting",
-		"onEntity": true,
+		"onBlock": "Disabled",
+		"onEntity": false,
 		"holdingTool": "Always",
 		"holdingMeleeWeapon": true,
 		"holdingRangedWeapon": "Always",
@@ -15,7 +15,7 @@
 		"holdingUsableItem": "IfInteractable"
 	},
 	"color": {
-		"crosshairColor": "Unchanged",
+		"crosshairColor": "Custom",
 		"customColor": -5588020,
 		"forceColor": false
 	},

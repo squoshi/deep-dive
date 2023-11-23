@@ -17,6 +17,9 @@ global.deep_dive = {}
  * @param {Number} resistance 
  * @param {String} name 
  * @author ssquoshi
+ * @returns {{blocks: Array<Internal.BlockBuilder>, items: Array<Internal.ItemBuilder>}} 
+ * Blocks return a list of registered blocks
+ * Items return: [0] = ore, [1-5] = refined ore
  */
 function createMaterial(material, hardness, resistance, name) {
     let sound = new SoundType(1.0, 1.0, 'minecraft:block.chain.break', 'minecraft:block.netherite_block.step', 'minecraft:block.netherite_block.place', 'minecraft:block.netherite_block.hit', 'minecraft:block.netherite_block.fall')

@@ -24,7 +24,7 @@
 	#Range: > 30
 	"Distance From Crosshair" = 30
 	#Enables hit markers on crit/kill.
-	"Enable Crit/Kill Markers" = true
+	"Enable Crit/Kill Markers" = false
 	#Shows a special indicator when hit direction can't be determined
 	"Enable Non Directional Damage" = true
 	#Scale of the indicator depends on the distance

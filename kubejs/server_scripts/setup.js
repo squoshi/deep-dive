@@ -150,7 +150,6 @@ EntityEvents.hurt(event => {
     if (!event?.source?.actual) return
     if (!event.source.actual.isPlayer()) return
     let player = event.source.actual
-    event.source.actual.sendData('hit_marker', {})
     if (!player.getMainHandItem().hasTag('deep_dive:guns')) event.cancel()
 })
 
